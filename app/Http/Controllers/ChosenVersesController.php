@@ -24,7 +24,7 @@ class ChosenVersesController extends Controller
 
     public function store(Request $request)
     {
-        // security: we can pass another parameters and it ignores them
+        // security: we can pass another parameters and it ignores them(what should we do?)
         $newChosenVerses = new ChosenVerses;
         $newChosenVerses->poet_id = $request->chosen_verse['poet_id'];
         $newChosenVerses->poem_id = $request->chosen_verse['poem_id'];
@@ -34,6 +34,7 @@ class ChosenVersesController extends Controller
         $newChosenVerses->save();
         return $newChosenVerses;
     }
+
     public function update(Request $request, $id)
     {
         $existingChosenVerses = ChosenVerses::find($id);

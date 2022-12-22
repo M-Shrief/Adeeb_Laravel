@@ -19,11 +19,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('phone');
             $table->string('address');
-            $table->json('print')->default(new Expression('(JSON_ARRAY())'));
-            $table->string('background');
-            $table->string('text_type');
-            $table->string('text_color');
-            $table->boolean('reviewed');
+            $table->boolean('reviewed')->default(false);
+            $table->boolean('completed')->default(false);
+            $table->json('products')->default(new Expression('(JSON_ARRAY())'));
             $table->timestamps();
         });
     }

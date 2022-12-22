@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use  App\Http\Controllers\PoetController;
 use App\Http\Controllers\ProseController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,4 +54,12 @@ Route::prefix('/prose')->group(function () {
     Route::get('/{id}', [ProseController::class, 'indexOneWithPoet']);
     Route::put('/{id}', [ProseController::class, 'update']);
     Route::delete('/{id}', [ProseController::class, 'destroy']);
+});
+
+Route::get('/orders', [OrderController::class, 'index']);
+Route::prefix('/order')->group(function () {
+    Route::post('/store', [OrderController::class, 'store']);
+    Route::get('/{id}', [OrderController::class, 'indexOne']);
+    Route::put('/{id}', [OrderController::class, 'update']);
+    Route::delete('/{id}', [OrderController::class, 'destroy']);
 });
