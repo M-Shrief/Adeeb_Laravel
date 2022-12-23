@@ -12,9 +12,9 @@ class OrderController extends Controller
         return Order::all();
     }
 
-    public function indexOne($id)
+    public function indexOne($name, $phone)
     {
-        $order = Order::find($id);
+        $order = Order::where('name', $name)->where('phone', $phone)->get();
 
         if ($order) {
             return $order;

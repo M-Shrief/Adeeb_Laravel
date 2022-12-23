@@ -59,7 +59,7 @@ Route::prefix('/prose')->group(function () {
 Route::get('/orders', [OrderController::class, 'index']);
 Route::prefix('/order')->group(function () {
     Route::post('/store', [OrderController::class, 'store']);
-    Route::get('/{id}', [OrderController::class, 'indexOne']);
+    Route::get('/{name}/{phone}', [OrderController::class, 'indexOne']);
     Route::put('/{id}', [OrderController::class, 'update']);
     Route::delete('/{id}', [OrderController::class, 'destroy']);
 });
