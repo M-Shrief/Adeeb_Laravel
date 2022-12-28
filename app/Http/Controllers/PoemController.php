@@ -17,8 +17,9 @@ class PoemController extends Controller
         $poem = Poem::with('poet:id,name')->get(['id', 'intro', 'poet_id']);
         if ($poem) {
             return $poem;
+        } else {
+            return 'Not Found';
         }
-        return 'Not Found';
     }
 
 

@@ -18,8 +18,9 @@ class OrderController extends Controller
 
         if ($order) {
             return $order;
+        } else {
+            return 'Not Found';
         }
-        return 'Not Found';
     }
 
     public function store(Request $request)
@@ -28,8 +29,6 @@ class OrderController extends Controller
         $newOrder->name = $request->order['name'];
         $newOrder->phone = $request->order['phone'];
         $newOrder->address = $request->order['address'];
-        $newOrder->reviewed = $request->order['reviewed'];
-        $newOrder->completed = $request->order['completed'];
         $newOrder->products = $request->order['products'];
 
         $newOrder->save();

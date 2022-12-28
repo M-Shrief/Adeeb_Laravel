@@ -4,8 +4,6 @@
 /public/storage
 /storage/*.key
 /vendor
-/adeeb_vue_laravel
-/SQL_DB_EXPORTS
 .env
 .env.backup
 .phpunit.result.cache
