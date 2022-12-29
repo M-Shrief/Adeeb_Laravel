@@ -1,4 +1,4 @@
-# "Adeeb آديب" Laravel API
+# "Adeeb أديب" Laravel API
 
 A Laravel API, tested by **postman**, to make crud request to "Adeeb آديب" **mySQl** databese.
 Our models: Poet, Poem, ChosenVerse, Prose, Order. 
