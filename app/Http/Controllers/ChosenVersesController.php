@@ -9,7 +9,7 @@ class ChosenVersesController extends Controller
 {
     public function indexWithPoetAndPoem()
     {
-        return ChosenVerses::with(['poet:id,name'])->where('reviewed', true)->get(['id', 'verse', 'tags', 'poet_id', 'poem_id']);
+        return ChosenVerses::inRandomOrder()->with(['poet:id,name'])->where('reviewed', true)->get(['id', 'verse', 'tags', 'poet_id', 'poem_id']);
     }
 
     public function indexRandom($num)

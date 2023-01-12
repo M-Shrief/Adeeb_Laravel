@@ -9,7 +9,7 @@ class ProseController extends Controller
 {
     public function indexWithPoet()
     {
-        return Prose::with('poet:id,name')->get(['id', 'tags', 'qoute', 'reviewed', 'poet_id']);
+        return Prose::inRandomOrder()->with('poet:id,name')->get(['id', 'tags', 'qoute', 'reviewed', 'poet_id']);
     }
 
     public function indexRandom($num)
