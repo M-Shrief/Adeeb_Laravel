@@ -12,6 +12,11 @@ class ChosenVersesController extends Controller
         return ChosenVerses::with(['poet:id,name'])->where('reviewed', true)->get(['id', 'verse', 'tags', 'poet_id', 'poem_id']);
     }
 
+    public function indexRandom($num)
+    {
+        return ChosenVerses::inRandomOrder()->limit($num)->where('reviewed', true)->get(['id', 'verse', 'tags', 'poet_id', 'poem_id']);
+    }
+
     public function indexOneWithPoet($id)
     {
         $chosenVerse = ChosenVerses::with(['poet:id,name,bio,time_period'])->where('reviewed', true)->find($id, ['id', 'verse', 'tags', 'poet_id', 'poem_id']);

@@ -41,6 +41,7 @@ Route::prefix('/poem')->group(function () {
 });
 
 Route::get('/chosen_verses', [ChosenVersesController::class, 'indexWithPoetAndPoem']);
+Route::get('/chosen_verses/random/{num}', [ChosenVersesController::class, 'indexRandom']);
 Route::prefix('/chosen_verse')->group(function () {
     Route::post('/store', [ChosenVersesController::class, 'store']);
     Route::get('/{id}', [ChosenVersesController::class, 'indexOneWithPoet']);
@@ -49,6 +50,7 @@ Route::prefix('/chosen_verse')->group(function () {
 });
 
 Route::get('/proses', [ProseController::class, 'indexWithPoet']);
+Route::get('/proses/random/{num}', [ProseController::class, 'indexRandom']);
 Route::prefix('/prose')->group(function () {
     Route::post('/store', [ProseController::class, 'store']);
     Route::get('/{id}', [ProseController::class, 'indexOneWithPoet']);

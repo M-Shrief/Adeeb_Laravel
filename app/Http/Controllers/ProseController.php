@@ -12,6 +12,10 @@ class ProseController extends Controller
         return Prose::with('poet:id,name')->get(['id', 'tags', 'qoute', 'reviewed', 'poet_id']);
     }
 
+    public function indexRandom($num)
+    {
+        return Prose::inRandomOrder()->limit($num)->where('reviewed', true)->get(['id', 'tags', 'qoute', 'reviewed', 'poet_id']);
+    }
     public function indexOneWithPoet($id)
     {
         $prose = Prose::with(['poet:id,name,bio,time_period'])->where('reviewed', true)->find($id, ['id', 'tags', 'qoute', 'reviewed', 'poet_id']);
