@@ -29,10 +29,10 @@ class ProseController extends Controller
     public function store(Request $request)
     {
         $newProse = new Prose;
-        $newProse->poet_id = $request->prose['poet_id'];
-        $newProse->tags = $request->prose['tags'];
-        $newProse->qoute = $request->prose['qoute'];
-        $newProse->reviewed = $request->prose['reviewed'];
+        $newProse->poet_id = $request->poet_id;
+        $newProse->tags = $request->tags;
+        $newProse->qoute = $request->qoute;
+        $newProse->reviewed = $request->reviewed;
 
         $newProse->save();
         return $newProse;

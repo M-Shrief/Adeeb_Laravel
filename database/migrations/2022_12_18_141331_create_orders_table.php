@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('phone');
             $table->string('address');
-            $table->boolean('reviewed')->default(false);
-            $table->boolean('completed')->default(false);
+            $table->boolean('reviewed');
+            $table->boolean('completed');
             $table->json('products')->default(new Expression('(JSON_ARRAY())'));
             $table->timestamps();
         });

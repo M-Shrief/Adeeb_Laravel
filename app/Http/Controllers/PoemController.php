@@ -35,10 +35,9 @@ class PoemController extends Controller
     public function store(Request $request)
     {
         $newPoem = new Poem;
-        $newPoem->poet_id = $request->poem['poet_id'];
-        $newPoem->intro = $request->poem['intro'];
-        $newPoem->verses  = $request->poem['verses'];
-
+        $newPoem->poet_id = $request->poet_id;
+        $newPoem->intro = $request->intro;
+        $newPoem->verses  = $request->verses;
         $newPoem->save();
         return $newPoem;
     }

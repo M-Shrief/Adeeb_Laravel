@@ -31,10 +31,10 @@ class ChosenVersesController extends Controller
     {
         // security: we can pass another parameters and it ignores them(what should we do?)
         $newChosenVerses = new ChosenVerses;
-        $newChosenVerses->poet_id = $request->chosen_verse['poet_id'];
-        $newChosenVerses->poem_id = $request->chosen_verse['poem_id'];
-        $newChosenVerses->tags = $request->chosen_verse['tags'];
-        $newChosenVerses->verse = $request->chosen_verse['verse'];
+        $newChosenVerses->poet_id = $request->poet_id;
+        $newChosenVerses->poem_id = $request->poem_id;
+        $newChosenVerses->tags = $request->tags;
+        $newChosenVerses->verse = $request->verse;
 
         $newChosenVerses->save();
         return $newChosenVerses;

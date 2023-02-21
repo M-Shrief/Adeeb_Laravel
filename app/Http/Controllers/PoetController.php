@@ -31,9 +31,9 @@ class PoetController extends Controller
     public function store(Request $request)
     {
         $newPoet = new Poet;
-        $newPoet->name = $request->poet['name'];
-        $newPoet->time_period = $request->poet['time_period'];
-        $newPoet->bio = $request->poet['bio'];
+        $newPoet->name = $request->name;
+        $newPoet->time_period = $request->time_period;
+        $newPoet->bio = $request->bio;
         $newPoet->save();
         return $newPoet;
     }
