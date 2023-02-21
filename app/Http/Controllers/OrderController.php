@@ -26,10 +26,12 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         $newOrder = new Order;
-        $newOrder->name = $request->order['name'];
-        $newOrder->phone = $request->order['phone'];
-        $newOrder->address = $request->order['address'];
-        $newOrder->products = $request->order['products'];
+        $newOrder->name = $request->name;
+        $newOrder->phone = $request->phone;
+        $newOrder->address = $request->address;
+        $newOrder->products = $request->products;
+        $newOrder->reviewed = false;
+        $newOrder->completed = false;
 
         $newOrder->save();
         return $newOrder;
